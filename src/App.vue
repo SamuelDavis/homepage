@@ -5,18 +5,24 @@
       <h3>Contact</h3>
       <contact :info="contact"/>
     </div>
+    <div>
+      <h3>Experience</h3>
+      <experience :key="i" v-bind="info" v-for="(info, i) in experiences"/>
+    </div>
   </div>
 </template>
 
 <script>
   import MainNav from './components/MainNav'
   import Contact from './components/Contact.vue'
+  import Experience from './components/Experience.vue'
 
   export default {
     name: 'app',
     components: {
       MainNav,
-      Contact
+      Contact,
+      Experience
     },
     data () {
       return {
@@ -33,22 +39,107 @@
           phone: { text: '802-745-0057', href: 'tel:802-745-0057' },
           email: { text: 'samueljakdavis@gmail.com', href: 'mailto:samueljakdavis@gmail.com' },
           website: { text: 'https://sdavis.online', href: 'https://sdavis.online' },
-        }
+        },
+        experiences: [
+          {
+            name: 'AlterImaging',
+            location: 'Charlotte, NC',
+            from: new Date('4/18/2019'),
+            to: undefined,
+            role: 'Jr. Software Developer',
+            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
+          },
+          {
+            name: 'Gold Silver LLC',
+            location: 'Burlington, VT',
+            from: new Date('3/1/2017'),
+            to: new Date('6/21/2018'),
+            role: 'Software Engineer',
+            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
+          },
+          {
+            name: 'Daft Labs',
+            location: 'Burlington, VT',
+            from: new Date('6/1/2014'),
+            to: new Date('2/1/2017'),
+            role: 'Software Engineer',
+            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
+          },
+          {
+            name: 'BurlingtonBytes',
+            location: 'Burlington, VT',
+            from: new Date('10/1/2013'),
+            to: new Date('6/1/2014'),
+            role: 'Software Engineer',
+            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
+          },
+          {
+            name: 'Bluehouse Group',
+            location: 'Richmond, VT',
+            from: new Date('2/1/2013'),
+            to: new Date('9/1/2013'),
+            role: 'Software Engineer',
+            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
+          },
+          {
+            name: 'BurlingtonBytes',
+            location: 'Burlington, VT',
+            from: new Date('10/1/2012'),
+            to: new Date('12/1/2013'),
+            role: 'Software Engineer Intern',
+            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
+          },
+          {
+            name: 'Champlain College',
+            location: 'Burlington, VT',
+            from: new Date('10/1/2012'),
+            to: new Date('2/1/2013'),
+            role: 'Software Engineer Intern',
+            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
+          },
+          {
+            name: 'Engineering Ventures',
+            location: 'Burlington, VT',
+            from: new Date('4/1/2012'),
+            to: new Date('4/28/2012'),
+            role: 'Storage Archivist',
+            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
+          },
+          {
+            name: 'Regional Grocery and Inventory Service',
+            location: 'Burlington, VT',
+            from: new Date('12/1/2011'),
+            to: new Date('10/1/2012'),
+            role: 'Inventory Taker',
+            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
+          },
+          {
+            name: 'JPMorgan Chase',
+            location: 'Williston, VT',
+            from: new Date('6/1/2010'),
+            to: new Date('9/1/2010'),
+            role: 'Data Entry',
+            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
+          }
+        ]
       }
     }
   }
 </script>
 
 <style lang="scss">
+  $lineHeight: 16px;
   $colorText: rgb(166, 180, 194);
   $colorBg: rgb(42, 42, 42);
 
   * {
     color: $colorText;
+    font-size: $lineHeight;
+    line-height: $lineHeight;
   }
 
   html {
     background-color: $colorBg;
-    font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace;
+    font-family: monospace;
   }
 </style>
