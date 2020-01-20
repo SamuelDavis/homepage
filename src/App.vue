@@ -1,16 +1,22 @@
 <template>
   <div id="app">
     <main-nav :routes="mainNav"/>
+    <div>
+      <h3>Contact</h3>
+      <contact :info="contact"/>
+    </div>
   </div>
 </template>
 
 <script>
   import MainNav from './components/MainNav'
+  import Contact from './components/Contact.vue'
 
   export default {
     name: 'app',
     components: {
-      MainNav
+      MainNav,
+      Contact
     },
     data () {
       return {
@@ -20,7 +26,14 @@
           'Where',
           'When',
           'Why',
-        ]
+        ],
+        contact: {
+          name: { text: 'Samuel Davis' },
+          address: { text: 'Cornelius, NC', href: 'https://www.google.com/maps/place/Cornelius,+NC' },
+          phone: { text: '802-745-0057', href: 'tel:802-745-0057' },
+          email: { text: 'samueljakdavis@gmail.com', href: 'mailto:samueljakdavis@gmail.com' },
+          website: { text: 'https://sdavis.online', href: 'https://sdavis.online' },
+        }
       }
     }
   }
