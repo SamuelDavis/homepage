@@ -2,12 +2,18 @@
   <div id="app">
     <main-nav :routes="mainNav"/>
     <div>
-      <h3>Contact</h3>
-      <contact :info="contact"/>
-    </div>
-    <div>
-      <h3>Experience</h3>
-      <experience :key="i" v-bind="info" v-for="(info, i) in experiences"/>
+      <section>
+        <h3>Contact</h3>
+        <contact :info="contact"/>
+      </section>
+      <section :key="i" v-for="({label, skills},i) in skillSets">
+        <h3 v-text="label"/>
+        <skill-set v-bind:skills="skills"/>
+      </section>
+      <section>
+        <h3>Experience</h3>
+        <experience :key="i" v-bind="info" v-for="(info, i) in experiences"/>
+      </section>
     </div>
   </div>
 </template>
@@ -16,13 +22,15 @@
   import MainNav from './components/MainNav'
   import Contact from './components/Contact.vue'
   import Experience from './components/Experience.vue'
+  import SkillSet from './components/SkillSet.vue'
 
   export default {
     name: 'app',
     components: {
       MainNav,
       Contact,
-      Experience
+      Experience,
+      SkillSet
     },
     data () {
       return {
@@ -32,6 +40,18 @@
           'Where',
           'When',
           'Why',
+        ],
+        skillSets: [
+          {
+            label: 'Languages',
+            skills: [
+              { name: 'HTML', confidence: 95 },
+              { name: 'CSS', confidence: 75 },
+              { name: 'PHP', confidence: 99 },
+              { name: 'JS', confidence: 97 },
+              { name: 'SQL', confidence: 55 },
+            ]
+          }
         ],
         contact: {
           name: { text: 'Samuel Davis' },
@@ -141,5 +161,15 @@
   html {
     background-color: $colorBg;
     font-family: monospace;
+  }
+
+  #app > div {
+    display: flex;
+    flex-wrap: wrap;
+
+    section {
+      flex: 1;
+      min-width: fit-content;
+    }
   }
 </style>
