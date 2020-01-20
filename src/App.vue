@@ -1,28 +1,41 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <main-nav :routes="mainNav"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import MainNav from './components/MainNav'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  export default {
+    name: 'app',
+    components: {
+      MainNav
+    },
+    data () {
+      return {
+        mainNav: [
+          'Who',
+          'What',
+          'Where',
+          'When',
+          'Why',
+        ]
+      }
+    }
   }
-}
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  $colorText: rgb(166, 180, 194);
+  $colorBg: rgb(42, 42, 42);
+
+  * {
+    color: $colorText;
+  }
+
+  html {
+    background-color: $colorBg;
+    font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace;
+  }
 </style>
