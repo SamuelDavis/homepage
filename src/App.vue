@@ -112,7 +112,7 @@
             from: new Date('3/1/2017'),
             to: new Date('6/21/2018'),
             role: 'Software Engineer',
-            comments: 'I was the lead-(only-)developer and architect for both the front- and back-end of a precious-metals e-commerce/trading platform. I partially implemented a microservice pattern to build a very robust frontend. I spent incredible amounts of time in meetings with partner-companies trying to spec the backend. I learned a huge amount and was moderately successful but ended up as another in a series of developers to quit in the face of the monumental task.'
+            comments: 'I was the lead-(only-)developer and architect for both the front- and back-end of a precious-metals e-commerce/trading platform. I partially implemented a microservice pattern to build a very robust frontend. I spent incredible amounts of time in meetings with partner-companies trying to spec the backend. I learned a huge amount and was moderately successful.'
           },
           {
             name: 'Daft Labs',
@@ -152,7 +152,7 @@
             from: new Date('10/1/2012'),
             to: new Date('2/1/2013'),
             role: 'Software Engineer Intern',
-            comments: 'This was pretty generic intern work: a custom social media application internal to the college which never really got off the ground and a time-keeping SPA app before they were cool.'
+            comments: 'This was pretty generic intern work: prototyping a custom social media application internal to the college and a time-keeping SPA before they were cool.'
           }
         ]
       }
