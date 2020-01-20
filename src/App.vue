@@ -2,15 +2,20 @@
   <div id="app">
     <main-nav :routes="mainNav"/>
     <div>
-      <section>
-        <h3>Contact</h3>
-        <contact :info="contact"/>
+      <section id="who">
+        <h3>Info</h3>
+        <article>
+          <contact :info="contact"/>
+          <p>I have been a professional, end-to-end LAMP-stack web-developer since 2013. I'm very comfortable with SOLID, MVC, and Domain Driven Design. You can find some of my more technical thoughts in <a href="https://notes.sdavis.online">my notebook</a>.</p>
+        </article>
       </section>
-      <section :key="i" v-for="({label, skills},i) in skillSets">
-        <h3 v-text="label"/>
-        <skill-set v-bind:skills="skills"/>
+      <section id="what">
+        <article :key="i" v-for="({label, skills},i) in skillSets">
+          <h3 v-text="label"/>
+          <skill-set v-bind:skills="skills"/>
+        </article>
       </section>
-      <section>
+      <section id="where">
         <h3>Experience</h3>
         <experience :key="i" v-bind="info" v-for="(info, i) in experiences"/>
       </section>
@@ -50,6 +55,26 @@
               { name: 'PHP', confidence: 99 },
               { name: 'JS', confidence: 97 },
               { name: 'SQL', confidence: 55 },
+            ]
+          },
+          {
+            label: 'Tools',
+            skills: [
+              { name: 'Unix', confidence: 85 },
+              { name: 'Vim', confidence: 65 },
+              { name: 'Docker', confidence: 80 },
+              { name: 'AWS', confidence: 60 },
+            ]
+          },
+          {
+            label: 'Frameworks',
+            skills: [
+              { name: 'Laravel', confidence: 80 },
+              { name: 'Vue', confidence: 77 },
+              { name: 'Vuex', confidence: 70 },
+              { name: 'Bootstrap', confidence: 70 },
+              { name: 'WordPress', confidence: 70 },
+              { name: 'CraftCMS', confidence: 60 }
             ]
           }
         ],
@@ -163,13 +188,12 @@
     font-family: monospace;
   }
 
-  #app > div {
+  #who > article, #what {
     display: flex;
     flex-wrap: wrap;
 
-    section {
+    > * {
       flex: 1;
-      min-width: fit-content;
     }
   }
 </style>
