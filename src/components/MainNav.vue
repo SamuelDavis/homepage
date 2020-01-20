@@ -21,6 +21,10 @@
   $colorFunctions: rgb(254, 196, 109);
 
   ul {
+    @media print {
+      display: none;
+    }
+
     margin: 0;
     padding: 0;
     list-style-type: none;

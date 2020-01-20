@@ -37,25 +37,31 @@
 </script>
 
 <style lang="scss" scoped>
-  ul {
-    list-style-type: none;
+  article {
+    @media print {
+      break-inside: avoid;
+    }
+    ul {
+      list-style-type: none;
 
-    li {
-      display: inline-block;
+      li {
+        display: inline-block;
 
-      &:first-child {
-        font-weight: bold;
-      }
-
-      &.dates {
-        *:not(:last-child):after {
-          content: ' - ';
+        &:first-child {
+          font-weight: bold;
         }
-      }
 
-      &:not(:last-child):after {
-        content: '|';
-        margin: 0 1em;
+        &.dates {
+          *:not(:last-child):after {
+            content: '-';
+            margin: 0 0.25em;
+          }
+        }
+
+        &:not(:last-child):after {
+          content: '|';
+          margin: 0 0.25em;
+        }
       }
     }
   }

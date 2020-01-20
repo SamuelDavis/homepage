@@ -2,6 +2,7 @@
   <div id="app">
     <main-nav :routes="mainNav" v-on:route="changeRoute">
       <li><a href="https://notes.sdavis.online" target="_blank">Notes</a></li>
+      <li><a @click="print" href="#">PrintVersion</a></li>
     </main-nav>
     <section id="who" v-show="isVisible('who')">
       <h3>Info</h3>
@@ -37,6 +38,9 @@
       SkillSet
     },
     methods: {
+      print() {
+        window.print();
+      },
       changeRoute (target) {
         this.route = target.toLowerCase()
       },
