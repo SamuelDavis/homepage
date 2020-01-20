@@ -6,7 +6,7 @@
         <th v-text="label"/>
         <td>
           <a :href="href" target="_blank" v-if="href" v-text="text"/>
-          <h3 v-else v-text="text"/>
+          <h1 v-else v-text="text"/>
         </td>
       </tr>
       </tbody>
@@ -30,14 +30,17 @@
     flex-wrap: wrap;
 
     > * {
+      margin-top: 0;
       flex: 1;
     }
 
-    h3 {
+    h1 {
       margin: 0;
     }
 
     table {
+      margin-bottom: 1em;
+
       th {
         text-align: left;
         padding-right: 2em;

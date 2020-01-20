@@ -7,7 +7,7 @@
     <section id="who" v-show="isVisible('who')">
       <h3>Info</h3>
       <contact :info="contact">
-        <p>I have been a professional, end-to-end LAMP-stack web-developer since 2013. I'm very comfortable with SOLID, MVC, and Domain Driven Design. You can find some of my more technical thoughts in <a href="https://notes.sdavis.online">my notebook</a>.</p>
+        <p>I have been a professional, end-to-end LAMP-stack web-developer since 2013. I spend my time coding small apps/tools, reading about OPS, and listening to the dev community discuss app-architecture. You can find some of my more technical thoughts in <a href="https://notes.sdavis.online">my notebook</a>.</p>
       </contact>
     </section>
     <section id="what" v-show="isVisible('what')">
@@ -38,8 +38,8 @@
       SkillSet
     },
     methods: {
-      print() {
-        window.print();
+      print () {
+        window.print()
       },
       changeRoute (target) {
         this.route = target.toLowerCase()
@@ -103,7 +103,7 @@
             from: new Date('4/18/2019'),
             to: undefined,
             role: 'Jr. Software Developer',
-            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
+            comments: 'I managed hosting, trouble-shot terrifying legacy PHP applications, and maintained WordPress/CraftCMS sites here. This was a lot of mucking with cPanel\'s Web Hosting Manager, SSHing into production server(s) and reading logs, lightweight UI apps/styling for marketing sites, and project-management back-and-forth.'
           },
           {
             name: 'Gold Silver LLC',
@@ -111,7 +111,7 @@
             from: new Date('3/1/2017'),
             to: new Date('6/21/2018'),
             role: 'Software Engineer',
-            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
+            comments: 'I was the lead-(only-)developer and architect for both the front- and back-end of a precious-metals e-commerce/trading platform. I partially implemented a microservice pattern to build a very robust frontend. I spent incredible amounts of time in meetings with partner-companies trying to spec the backend. I learned a huge amount and was moderately successful but ended up as another in a series of developers to quit in the face of the monumental task.'
           },
           {
             name: 'Daft Labs',
@@ -119,7 +119,7 @@
             from: new Date('6/1/2014'),
             to: new Date('2/1/2017'),
             role: 'Software Engineer',
-            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
+            comments: 'This was all agency work for exciting and often well-funded start-ups. This was where I learned the difference between code and clean code, and how architecture is the challenge of a real developer. Mostly I was designing and building REST APIs, but I was often the on-call guy to help any team or client; I was often put to OPS work and became familiar with AWS as well as concepts like containerization through Chef and Docker.'
           },
           {
             name: 'BurlingtonBytes',
@@ -127,7 +127,7 @@
             from: new Date('10/1/2013'),
             to: new Date('6/1/2014'),
             role: 'Software Engineer',
-            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
+            comments: 'This job had two parts; a WordPress shop and a plain-old-PHP legacy firearms-manufacturing back office application. Building plugins for WordPress was unremarkable. The manufacturing back office app was a real rat\'s nest of PHP, jQuery, and SQL which taught me the virtues of functional programming - building isolated apps which could be interfaced with the terrifying legacy app without disturbing it.'
           },
           {
             name: 'Bluehouse Group',
@@ -135,7 +135,7 @@
             from: new Date('2/1/2013'),
             to: new Date('9/1/2013'),
             role: 'Software Engineer',
-            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
+            comments: 'This was mostly peculiar apps for start-ups; QuizBean.com was where most of the work went, but there were also small apps to automate social-media work, or complicated templating for brochure sites.'
           },
           {
             name: 'BurlingtonBytes',
@@ -143,7 +143,7 @@
             from: new Date('10/1/2012'),
             to: new Date('12/1/2013'),
             role: 'Software Engineer Intern',
-            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
+            comments: 'This was just a continuation of my college intern work: WordPress marketing sites, or WordPress-plugin applications. The most remarkable accomplishment during this time was a web scraper which automatically generated pages from re-formatted content.'
           },
           {
             name: 'Champlain College',
@@ -151,31 +151,7 @@
             from: new Date('10/1/2012'),
             to: new Date('2/1/2013'),
             role: 'Software Engineer Intern',
-            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
-          },
-          {
-            name: 'Engineering Ventures',
-            location: 'Burlington, VT',
-            from: new Date('4/1/2012'),
-            to: new Date('4/28/2012'),
-            role: 'Storage Archivist',
-            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
-          },
-          {
-            name: 'Regional Grocery and Inventory Service',
-            location: 'Burlington, VT',
-            from: new Date('12/1/2011'),
-            to: new Date('10/1/2012'),
-            role: 'Inventory Taker',
-            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
-          },
-          {
-            name: 'JPMorgan Chase',
-            location: 'Williston, VT',
-            from: new Date('6/1/2010'),
-            to: new Date('9/1/2010'),
-            role: 'Data Entry',
-            comments: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam sollicitudin consequat. Etiam euismod nisl eu convallis mollis. Ut vitae ipsum vitae purus bibendum laoreet ac eu eros. Quisque laoreet quam eget turpis vulputate posuere. Aliquam varius bibendum cursus. Quisque et nisl rhoncus, blandit enim vestibulum, vulputate enim. Curabitur fermentum.'
+            comments: 'This was pretty generic intern work: a custom social media application internal to the college which never really got off the ground and a time-keeping SPA app before they were cool.'
           }
         ]
       }
@@ -187,6 +163,16 @@
   $lineHeight: 16px;
   $colorText: rgb(166, 180, 194);
   $colorBg: rgb(42, 42, 42);
+
+  @media print {
+    section {
+      display: block !important;
+
+      &#what {
+        display: flex !important;
+      }
+    }
+  }
 
   * {
     color: $colorText;
