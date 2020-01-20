@@ -104,7 +104,7 @@
             from: new Date('4/18/2019'),
             to: undefined,
             role: 'Jr. Software Developer',
-            comments: 'I managed hosting, trouble-shot terrifying legacy PHP applications, and maintained WordPress/CraftCMS sites here. This was a lot of mucking with cPanel\'s Web Hosting Manager, SSHing into production server(s) and reading logs, lightweight UI apps/styling for marketing sites, and project-management back-and-forth.'
+            comments: 'I manage hosting, trouble-shot terrifying legacy PHP applications, and maintained WordPress/CraftCMS sites here. This consists mostly of mucking with cPanel\'s Web Hosting Manager, SSHing into production server(s) and reading logs, lightweight UI apps/styling for marketing sites, and project-management back-and-forth.'
           },
           {
             name: 'Gold Silver LLC',

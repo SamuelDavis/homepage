@@ -4,7 +4,7 @@
       <li><b v-text="name"/></li>
       <li v-text="role"/>
       <li class="dates">
-        <span :key="i" v-for="(date, i) in [from, to]" v-if="date" v-text="formatDate(date)"/>
+        <span :key="i" v-for="(date, i) in [from, to]" v-text="formatDate(date)"/>
       </li>
       <li>
         <a :href="formatLocation(location)" target="_blank" v-text="location"/>
@@ -27,7 +27,7 @@
     },
     methods: {
       formatDate (date) {
-        return [date.getMonth() + 1, date.getDate(), date.getFullYear()].join('/')
+        return date ? [date.getMonth() + 1, date.getDate(), date.getFullYear()].join('/') : 'present'
       },
       formatLocation (location) {
         return `https://www.google.com/maps/place/${location.replace(/\s+/, '+')}`
