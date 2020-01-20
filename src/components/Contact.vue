@@ -11,6 +11,7 @@
       </tr>
       </tbody>
     </table>
+    <slot/>
   </address>
 </template>
 
@@ -25,6 +26,13 @@
 
 <style lang="scss" scoped>
   address {
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+      flex: 1;
+    }
+
     h3 {
       margin: 0;
     }

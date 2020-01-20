@@ -1,25 +1,24 @@
 <template>
   <div id="app">
-    <main-nav :routes="mainNav"/>
-    <div>
-      <section id="who">
-        <h3>Info</h3>
-        <article>
-          <contact :info="contact"/>
-          <p>I have been a professional, end-to-end LAMP-stack web-developer since 2013. I'm very comfortable with SOLID, MVC, and Domain Driven Design. You can find some of my more technical thoughts in <a href="https://notes.sdavis.online">my notebook</a>.</p>
-        </article>
-      </section>
-      <section id="what">
-        <article :key="i" v-for="({label, skills},i) in skillSets">
-          <h3 v-text="label"/>
-          <skill-set v-bind:skills="skills"/>
-        </article>
-      </section>
-      <section id="where">
-        <h3>Experience</h3>
-        <experience :key="i" v-bind="info" v-for="(info, i) in experiences"/>
-      </section>
-    </div>
+    <main-nav :routes="mainNav" v-on:route="changeRoute">
+      <li><a href="https://notes.sdavis.online" target="_blank">Notes</a></li>
+    </main-nav>
+    <section id="who" v-show="isVisible('who')">
+      <h3>Info</h3>
+      <contact :info="contact">
+        <p>I have been a professional, end-to-end LAMP-stack web-developer since 2013. I'm very comfortable with SOLID, MVC, and Domain Driven Design. You can find some of my more technical thoughts in <a href="https://notes.sdavis.online">my notebook</a>.</p>
+      </contact>
+    </section>
+    <section id="what" v-show="isVisible('what')">
+      <article :key="i" v-for="({label, skills},i) in skillSets">
+        <h3 v-text="label"/>
+        <skill-set v-bind:skills="skills"/>
+      </article>
+    </section>
+    <section id="where" v-show="isVisible('where')">
+      <h3>Experience</h3>
+      <experience :key="i" v-bind="info" v-for="(info, i) in experiences"/>
+    </section>
   </div>
 </template>
 
@@ -37,14 +36,22 @@
       Experience,
       SkillSet
     },
+    methods: {
+      changeRoute (target) {
+        this.route = target.toLowerCase()
+      },
+      isVisible (route) {
+        return this.route === 'all' || this.route === route
+      }
+    },
     data () {
       return {
+        route: 'all',
         mainNav: [
+          'All',
           'Who',
           'What',
           'Where',
-          'When',
-          'Why',
         ],
         skillSets: [
           {
@@ -188,7 +195,7 @@
     font-family: monospace;
   }
 
-  #who > article, #what {
+  #what {
     display: flex;
     flex-wrap: wrap;
 

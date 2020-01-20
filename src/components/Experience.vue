@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <article>
     <ul>
       <li><b v-text="name"/></li>
       <li v-text="role"/>
@@ -11,7 +11,7 @@
       </li>
     </ul>
     <p v-text="comments"/>
-  </div>
+  </article>
 </template>
 
 <script>

@@ -1,6 +1,7 @@
 <template>
   <ul>
-    <li :key="i" v-for="(text, i) in routes"><a href="#" v-text="text"/></li>
+    <li :key="i" v-for="(text, i) in routes"><a @click="$emit('route', text)" href="#" v-text="text"/></li>
+    <slot/>
   </ul>
 </template>
 
@@ -20,6 +21,8 @@
   $colorFunctions: rgb(254, 196, 109);
 
   ul {
+    margin: 0;
+    padding: 0;
     list-style-type: none;
     display: flex;
     flex-direction: row;
