@@ -8,7 +8,7 @@
     <section id="who" v-show="isVisible('who')">
       <h3>Info</h3>
       <contact :info="contact">
-        <p>I have been a professional, end-to-end LAMP-stack web-developer since 2013. I spend my time coding small apps/tools, reading about OPS, and listening to the dev community discuss app-architecture. You can find some of my more technical thoughts in <a href="https://notes.sdavis.online">my notebook</a>.</p>
+        <p>I have been a professional, end-to-end LAMP-stack web-developer since 2013. I spend my time coding small apps/tools/demos, reading about OPS, and listening to the dev community discuss app-architecture. You can find some of my more technical thoughts in <a href="https://notes.sdavis.online">my notebook</a>.</p>
       </contact>
     </section>
     <section id="what" v-show="isVisible('what')">
@@ -66,6 +66,7 @@
               { name: 'CSS', confidence: 75 },
               { name: 'PHP', confidence: 99 },
               { name: 'JS', confidence: 97 },
+              { name: 'TypeScript', confidence: 75 },
               { name: 'SQL', confidence: 55 },
             ]
           },
@@ -74,8 +75,9 @@
             skills: [
               { name: 'Unix', confidence: 85 },
               { name: 'Vim', confidence: 65 },
-              { name: 'Docker', confidence: 80 },
+              { name: 'Docker', confidence: 83 },
               { name: 'AWS', confidence: 60 },
+              { name: 'webpack', confidence: 62 },
             ]
           },
           {
@@ -104,7 +106,7 @@
             from: new Date('4/18/2019'),
             to: undefined,
             role: 'Jr. Software Developer',
-            comments: 'I manage hosting, trouble-shot terrifying legacy PHP applications, and maintained WordPress/CraftCMS sites here. This consists mostly of mucking with cPanel\'s Web Hosting Manager, SSHing into production server(s) and reading logs, lightweight UI apps/styling for marketing sites, and project-management back-and-forth.'
+            comments: 'I manage hosting, trouble-shoot legacy PHP applications, and maintain WordPress/CraftCMS sites here. This consists mostly of mucking with cPanel\'s Web Hosting Manager, SSHing into servers and reading logs, lightweight UI apps/styling for marketing sites, and project-management back-and-forth.'
           },
           {
             name: 'Gold Silver LLC',
@@ -128,7 +130,7 @@
             from: new Date('10/1/2013'),
             to: new Date('6/1/2014'),
             role: 'Software Engineer',
-            comments: 'This job had two parts; a WordPress shop and a plain-old-PHP legacy firearms-manufacturing back office application. Building plugins for WordPress was unremarkable. The manufacturing back office app was a real rat\'s nest of PHP, jQuery, and SQL which taught me the virtues of functional programming - building isolated apps which could be interfaced with the terrifying legacy app without disturbing it.'
+            comments: 'This job had two parts; agency work as a WordPress shop and maintaining a legacy, plain-old-PHP firearms-manufacturing back office application. Building plugins for WordPress was unremarkable. The manufacturing back office app was a real rat\'s nest of PHP, jQuery, and SQL which taught me the virtues of functional programming - building isolated apps which interfaced with the legacy app without disturbing it.'
           },
           {
             name: 'Bluehouse Group',
