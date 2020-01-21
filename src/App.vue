@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1 id="title">Samuel Davis' Resume</h1>
     <main-nav :routes="mainNav" v-on:route="changeRoute">
       <li><a href="https://notes.sdavis.online" target="_blank">Notes</a></li>
       <li><a href="https://github.com/SamuelDavis" target="_blank">GitHub</a></li>
@@ -83,11 +84,11 @@
           {
             label: 'Frameworks',
             skills: [
-              { name: 'Laravel', confidence: 80 },
+              { name: 'Laravel', confidence: 90 },
               { name: 'Vue', confidence: 77 },
               { name: 'Vuex', confidence: 70 },
               { name: 'Bootstrap', confidence: 70 },
-              { name: 'WordPress', confidence: 70 },
+              { name: 'WordPress', confidence: 67 },
               { name: 'CraftCMS', confidence: 60 }
             ]
           }
@@ -168,6 +169,16 @@
   $colorBg: rgb(42, 42, 42);
 
   @media print {
+    #title {
+      display: block !important;
+      font-size: 150%;
+      margin-bottom: 1.5em;
+    }
+
+    #who h3 {
+      display: none;
+    }
+
     section {
       display: block !important;
 
@@ -186,6 +197,10 @@
   html {
     background-color: $colorBg;
     font-family: monospace;
+  }
+
+  #title {
+    display: none;
   }
 
   #what {
