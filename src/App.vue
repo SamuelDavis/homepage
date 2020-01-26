@@ -1,35 +1,37 @@
 <template>
-  <div id="app">
-    <h1 id="title">Samuel Davis' Resume</h1>
-    <main-nav :routes="mainNav" v-on:route="changeRoute">
-      <li><a href="https://notes.sdavis.online" target="_blank">Notes</a></li>
-      <li><a href="https://github.com/SamuelDavis" target="_blank">GitHub</a></li>
-      <li><a @click="print" href="#">PrintVersion</a></li>
-    </main-nav>
-    <section id="who" v-show="isVisible('who')">
-      <h3>Info</h3>
-      <contact :info="contact">
-        <p>I have been a professional, end-to-end LAMP-stack web-developer since 2013. I spend my time coding small apps/tools/demos, reading about OPS, and listening to the dev community discuss app-architecture. You can find some of my more technical thoughts in <a href="https://notes.sdavis.online">my notebook</a>.</p>
-      </contact>
-    </section>
-    <section id="what" v-show="isVisible('what')">
-      <article :key="i" v-for="({label, skills},i) in skillLevels">
-        <h3 v-text="label"/>
-        <skill-level v-bind:skills="skills"/>
-      </article>
-    </section>
-    <section id="where" v-show="isVisible('where')">
-      <h3>Experience</h3>
-      <experience :key="i" v-bind="info" v-for="(info, i) in experiences"/>
-    </section>
-  </div>
+    <div id="app">
+        <h1 id="title">Samuel Davis' Resume</h1>
+        <main-nav :routes="mainNav" v-on:route="changeRoute">
+            <li><a href="https://notes.sdavis.online" target="_blank">Notes</a></li>
+            <li><a href="https://github.com/SamuelDavis" target="_blank">GitHub</a></li>
+            <li><a @click="print" href="#">PrintVersion</a></li>
+        </main-nav>
+        <section id="who" v-show="isVisible('who')">
+            <h3>Info</h3>
+            <contact :info="contact">
+                <p>I have been a professional, end-to-end LAMP-stack web-developer since 2013. I spend my time coding small apps/tools/demos, reading about OPS, and listening to the dev community discuss app-architecture.<span id="notebook-link">You can find some of my more technical thoughts in <a href="https://notes.sdavis.online" target="_blank">my notebook</a>.</span></p>
+            </contact>
+        </section>
+        <section id="what" v-show="isVisible('what')">
+            <article :key="i" v-for="({label, skills, notice = undefined},i) in skillLevels">
+                <h3 v-text="label"/>
+                <skill-level v-bind="{skills, notice}"/>
+            </article>
+            <skill-description :key="i" v-bind="skill" v-for="(skill, i) in skillDescriptions"/>
+        </section>
+        <section id="where" v-show="isVisible('where')">
+            <h3>Experience</h3>
+            <experience :key="i" v-bind="info" v-for="(info, i) in experiences"/>
+        </section>
+    </div>
 </template>
 
 <script>
   import MainNav from './components/MainNav'
-  import Contact from './components/Contact.vue'
-  import Experience from './components/Experience.vue'
-  import SkillLevel from './components/SkillLevel.vue'
+  import Contact from './components/Contact'
+  import Experience from './components/Experience'
+  import SkillLevel from './components/SkillLevel'
+  import SkillDescription from './components/SkillDescription'
 
   export default {
     name: 'app',
@@ -37,7 +39,8 @@
       MainNav,
       Contact,
       Experience,
-      SkillLevel
+      SkillLevel,
+      SkillDescription
     },
     methods: {
       print () {
@@ -67,9 +70,9 @@
               { name: 'CSS', confidence: 75 },
               { name: 'PHP', confidence: 99 },
               { name: 'JS', confidence: 97 },
-              { name: 'TypeScript', confidence: 75 },
               { name: 'SQL', confidence: 55 },
-            ]
+            ],
+            notice: 'Also experience with TypeScript & SCSS.'
           },
           {
             label: 'Tools',
@@ -93,6 +96,14 @@
             ]
           }
         ],
+        skillDescriptions: [
+          { label: 'API Integration', description: 'Modeling data, the transporting of data, and the execution of use cases should (normally) be independent of each other.' },
+          { label: 'Domain Driven Design', description: 'Even when building a monolith, it is useful to think of your application as microservices which are composed.' },
+          { label: 'Front-end Development', description: 'I am familiar with developing mobile-friendly/mobile-first applications with tools like CSS Flex and CSS Grid.' },
+          { label: 'DevOps', description: 'I use Docker every day; I understand that containerized applications are easier to develop, deploy, and debug.' },
+          { label: 'MVC', description: 'If the application is too large or complex, it is better to create specialized models which the controllers can transform.' },
+          { label: 'Dev Lifecycle', description: 'Rapid, MVP, something-better-than-nothing: Develop as many parts of application in isolation as possible; the UI doesn\'t need a backend to look good.' }
+        ],
         contact: {
           name: { text: 'Samuel Davis' },
           address: { text: 'Cornelius, NC', href: 'https://www.google.com/maps/place/Cornelius,+NC' },
@@ -106,7 +117,7 @@
             location: 'Charlotte, NC',
             from: new Date('4/18/2019'),
             to: undefined,
-            role: 'Jr. Software Developer',
+            role: 'Lead Software Developer',
             comments: 'I manage hosting, trouble-shoot legacy PHP applications, and maintain WordPress/CraftCMS sites here. This consists mostly of mucking with cPanel\'s Web Hosting Manager, SSHing into servers and reading logs, lightweight UI apps/styling for marketing sites, and project-management back-and-forth.'
           },
           {
@@ -164,51 +175,62 @@
 </script>
 
 <style lang="scss">
-  $lineHeight: 16px;
-  $colorText: rgb(166, 180, 194);
-  $colorBg: rgb(42, 42, 42);
+    $lineHeight: 16px;
+    $colorText: rgb(166, 180, 194);
+    $colorBg: rgb(42, 42, 42);
 
-  @media print {
+    @media print {
+        #title {
+            display: block !important;
+            font-size: 150%;
+            margin-bottom: 1.5em;
+        }
+
+        #who h3 {
+            display: none;
+        }
+
+        #notebook-link {
+            display: none;
+        }
+
+        section {
+            display: block !important;
+            break-inside: avoid;
+
+            &#what {
+                display: flex !important;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    * {
+        color: $colorText;
+        font-size: $lineHeight;
+        line-height: $lineHeight;
+    }
+
+    html {
+        background-color: $colorBg;
+        font-family: monospace;
+    }
+
     #title {
-      display: block !important;
-      font-size: 150%;
-      margin-bottom: 1.5em;
+        display: none;
     }
 
-    #who h3 {
-      display: none;
+    #what {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: start;
+
+        > * {
+            flex: 0 1 33%;
+            margin-bottom: 1em;
+        }
     }
-
-    section {
-      display: block !important;
-
-      &#what {
-        display: flex !important;
-      }
-    }
-  }
-
-  * {
-    color: $colorText;
-    font-size: $lineHeight;
-    line-height: $lineHeight;
-  }
-
-  html {
-    background-color: $colorBg;
-    font-family: monospace;
-  }
-
-  #title {
-    display: none;
-  }
-
-  #what {
-    display: flex;
-    flex-wrap: wrap;
-
-    > * {
-      flex: 1;
-    }
-  }
 </style>

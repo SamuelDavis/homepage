@@ -1,19 +1,25 @@
 <template>
-  <table>
-    <tbody>
-    <tr :key="name" v-for="{name,confidence} in skills">
-      <th v-text="name"/>
-      <td :ref="name" v-text="`${confidence}%`"/>
-    </tr>
-    </tbody>
-  </table>
+    <table>
+        <tbody>
+        <tr :key="name" v-for="{name,confidence} in skills">
+            <th v-text="name"/>
+            <td :ref="name" v-text="`${confidence}%`"/>
+        </tr>
+        <tr v-if="notice">
+            <td colspan="2">
+                <small v-text="notice"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </template>
 
 <script>
   export default {
     name: 'skill-level',
     props: {
-      skills: Array
+      skills: Array,
+      notice: String,
     },
     mounted () {
       this.skills.forEach(({ name, confidence }) => {
@@ -29,27 +35,27 @@
 </script>
 
 <style lang="scss" scoped>
-  table {
-    width: 100%;
+    table {
+        width: 100%;
 
-    tr {
-      th {
-        text-align: left;
-      }
+        tr {
+            th {
+                text-align: left;
+            }
 
-      td {
-        @media print {
-          text-shadow: none;
+            td {
+                @media print {
+                    text-shadow: none;
+                }
+
+                color: black;
+                border-radius: 3px;
+                padding-left: 0.5em;
+
+                &:last-child {
+                    width: 100%;
+                }
+            }
         }
-
-        color: black;
-        border-radius: 3px;
-        padding-left: 0.5em;
-
-        &:last-child {
-          width: 100%;
-        }
-      }
     }
-  }
 </style>
