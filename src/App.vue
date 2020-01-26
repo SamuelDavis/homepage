@@ -13,9 +13,9 @@
       </contact>
     </section>
     <section id="what" v-show="isVisible('what')">
-      <article :key="i" v-for="({label, skills},i) in skillSets">
+      <article :key="i" v-for="({label, skills},i) in skillLevels">
         <h3 v-text="label"/>
-        <skill-set v-bind:skills="skills"/>
+        <skill-level v-bind:skills="skills"/>
       </article>
     </section>
     <section id="where" v-show="isVisible('where')">
@@ -29,7 +29,7 @@
   import MainNav from './components/MainNav'
   import Contact from './components/Contact.vue'
   import Experience from './components/Experience.vue'
-  import SkillSet from './components/SkillSet.vue'
+  import SkillLevel from './components/SkillLevel.vue'
 
   export default {
     name: 'app',
@@ -37,7 +37,7 @@
       MainNav,
       Contact,
       Experience,
-      SkillSet
+      SkillLevel
     },
     methods: {
       print () {
@@ -59,7 +59,7 @@
           'What',
           'Where',
         ],
-        skillSets: [
+        skillLevels: [
           {
             label: 'Languages',
             skills: [

@@ -11,7 +11,7 @@
 
 <script>
   export default {
-    name: 'skill-set',
+    name: 'skill-level',
     props: {
       skills: Array
     },
