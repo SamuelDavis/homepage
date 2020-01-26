@@ -72,7 +72,7 @@
               { name: 'JS', confidence: 97 },
               { name: 'SQL', confidence: 55 },
             ],
-            notice: 'Also experience with TypeScript & SCSS.'
+            notice: '*Also experience with TypeScript & SCSS.'
           },
           {
             label: 'Tools',
@@ -102,7 +102,9 @@
           { label: 'Front-end Development', description: 'I am familiar with developing mobile-friendly/mobile-first applications with tools like CSS Flex and CSS Grid.' },
           { label: 'DevOps', description: 'I use Docker every day; I understand that containerized applications are easier to develop, deploy, and debug.' },
           { label: 'MVC', description: 'If the application is too large or complex, it is better to create specialized models which the controllers can transform.' },
-          { label: 'Dev Lifecycle', description: 'Rapid, MVP, something-better-than-nothing: Develop as many parts of application as simultaneously as possible.' }
+          { label: 'Dev Lifecycle', description: 'Rapid, MVP, something-better-than-nothing: Develop as many parts of application as simultaneously as possible.' },
+          { label: 'Data Processing', description: 'In a PHP context; if there is a lot of data to process, find a way to chunk that data and then boot multiple processes to process each chunk - let the OS handle threading for you.' },
+          { label: 'Optimization', description: 'Regularly-accessed data should be cached in-memory: this can be in a dedicated service like Redis, or per process; use meaningful indexing in your database and your application.' }
         ],
         contact: {
           name: { text: 'Samuel Davis' },
