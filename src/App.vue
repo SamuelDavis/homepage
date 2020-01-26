@@ -72,7 +72,7 @@
               { name: 'JS', confidence: 97 },
               { name: 'SQL', confidence: 55 },
             ],
-            notice: '*Also experience with TypeScript & SCSS.'
+            notice: '*Also TypeScript & SCSS.'
           },
           {
             label: 'Tools',
@@ -237,6 +237,10 @@
 
         > * {
             flex: 0 1 30%;
+
+            @media (max-width: 415px) {
+                flex-basis: 100%;
+            }
         }
     }
 </style>
