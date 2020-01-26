@@ -102,7 +102,7 @@
           { label: 'Front-end Development', description: 'I am familiar with developing mobile-friendly/mobile-first applications with tools like CSS Flex and CSS Grid.' },
           { label: 'DevOps', description: 'I use Docker every day; I understand that containerized applications are easier to develop, deploy, and debug.' },
           { label: 'MVC', description: 'If the application is too large or complex, it is better to create specialized models which the controllers can transform.' },
-          { label: 'Dev Lifecycle', description: 'Rapid, MVP, something-better-than-nothing: Develop as many parts of application in isolation as possible; the UI doesn\'t need a backend to look good.' }
+          { label: 'Dev Lifecycle', description: 'Rapid, MVP, something-better-than-nothing: Develop as many parts of application as simultaneously as possible.' }
         ],
         contact: {
           name: { text: 'Samuel Davis' },
@@ -175,9 +175,12 @@
 </script>
 
 <style lang="scss">
-    $lineHeight: 16px;
     $colorText: rgb(166, 180, 194);
     $colorBg: rgb(42, 42, 42);
+
+    * {
+        font-family: Arial, sans-serif;
+    }
 
     @media print {
         #title {
@@ -210,13 +213,14 @@
 
     * {
         color: $colorText;
-        font-size: $lineHeight;
-        line-height: $lineHeight;
     }
 
     html {
         background-color: $colorBg;
-        font-family: monospace;
+    }
+
+    article {
+        margin-bottom: 1em;
     }
 
     #title {
@@ -227,10 +231,10 @@
         display: flex;
         flex-wrap: wrap;
         align-items: start;
+        justify-content: space-evenly;
 
         > * {
-            flex: 0 1 33%;
-            margin-bottom: 1em;
+            flex: 0 1 30%;
         }
     }
 </style>
