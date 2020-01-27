@@ -26,7 +26,7 @@
         let pct = 0
         const interval = setInterval(() => {
           this.$refs[name][0].style.backgroundImage
-            = `linear-gradient(0.25turn, rgba(200,255,200,0.75) ${pct}%, rgba(255,200,200,0.75) ${pct + 0.1}%)`
+            = `linear-gradient(0.25turn, rgba(200,255,200,0.75) ${pct}%, rgba(169,169,169,0.75) ${pct + 0.1}%)`
           if (pct++ >= confidence) clearInterval(interval)
         }, 10)
       })
@@ -37,7 +37,6 @@
 <style lang="scss" scoped>
     table {
         width: 100%;
-
         tr {
             th {
                 text-align: left;

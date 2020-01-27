@@ -160,7 +160,7 @@
             from: new Date('10/1/2012'),
             to: new Date('12/1/2013'),
             role: 'Software Engineer Intern',
-            comments: 'This was just a continuation of my college intern work: WordPress marketing sites, or WordPress-plugin applications. The most remarkable accomplishment during this time was a web scraper which automatically generated pages from re-formatted content.'
+            comments: 'This was mostly WordPress marketing sites, or WordPress-plugin applications. The most remarkable accomplishment during this time was a web scraper which automatically generated pages from re-formatted content.'
           },
           {
             name: 'Champlain College',
@@ -168,7 +168,7 @@
             from: new Date('10/1/2012'),
             to: new Date('2/1/2013'),
             role: 'Software Engineer Intern',
-            comments: 'This was pretty generic intern work: prototyping a custom social media application internal to the college and a time-keeping SPA before they were cool.'
+            comments: 'I worked on a small team prototyping a custom social media application internal to the college and a time-keeping SPA before they were cool.'
           }
         ]
       }
