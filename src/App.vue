@@ -144,7 +144,7 @@
             from: new Date('10/1/2013'),
             to: new Date('6/1/2014'),
             role: 'Software Engineer',
-            comments: 'This job had two parts; agency work as a WordPress shop and maintaining a legacy, plain-old-PHP firearms-manufacturing back office application. Building plugins for WordPress was unremarkable. The manufacturing back office app was a real rat\'s nest of PHP, jQuery, and SQL which taught me the virtues of functional programming - building isolated apps which interfaced with the legacy app without disturbing it.'
+            comments: 'This job had two parts; agency work build WordPress brochure sites, and maintaining a legacy, plain-old-PHP firearms-manufacturing back office application. Building plugins for WordPress was unremarkable. The manufacturing back office app was a real rat\'s nest of PHP, jQuery, and SQL which taught me the virtues of orthogonal programming - building isolated apps which interfaced with the legacy app without disturbing it.'
           },
           {
             name: 'Bluehouse Group',
